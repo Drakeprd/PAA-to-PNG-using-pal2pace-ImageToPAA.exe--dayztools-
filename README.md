@@ -1,5 +1,5 @@
 # PAA-to-PNG-using-pal2pace-ImageToPAA.exe--dayztools-
-# Python script to convert multiple files from .paa to .png using ImageToPAA.exe from dayztools. To use it just copy this script to the folder that contains the .paa files, (The script will search for PAA files in the folder the script is stored and all the subfolders), execute it and you will get all the PAA files converted to PNG in a folder named converted_png keeping the original folder structure from the origin files.
+# Python script to convert multiple files from .paa to .png using ImageToPAA.exe from dayztools. To use it just download it and extract the script to the folder that contains the .paa files, (The script will search for PAA files in the folder the script is stored and all the subfolders), execute it and you will get all the PAA files converted to PNG in a folder named converted_png keeping the original folder structure from the origin files.
 
 import os
 import subprocess
