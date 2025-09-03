@@ -5,7 +5,7 @@ PAA to PNG Converter
 
 # Credits: Zer0-zn
 
-This Python script search and convert all the .paa files from the folder that is contained and subfolders (used in DayZ and other Bohemia Interactive games) to .png format and .png to .paa. It preserves the folder structure of your .paa files in the output folder.
+This Python script search and convert all the .paa files from the folder that is contained and subfolders (used in DayZ and other Bohemia Interactive games) to .png format and .png to .paa. It preserves the folder structure of your .paa files in the output folder and it automatically detect the -size of the file to convert and it set it automatically for the conversion.
 
 # Requirements
 
