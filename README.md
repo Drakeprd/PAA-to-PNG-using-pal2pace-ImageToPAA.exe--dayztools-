@@ -1,3 +1,5 @@
+# SWAP THE VIEW TO CODE OR RAW TO SEE THE FILE STRUCTURE
+
 # PAA-to-PNG-PNG-to-PAA-using-pal2pace-ImageToPAA.exe--dayztools-
 PAA to PNG Converter
 
