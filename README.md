@@ -3,7 +3,7 @@
 # PAA-to-PNG-PNG-to-PAA-using-pal2pace-ImageToPAA.exe--dayztools-
 PAA to PNG Converter
 
-# Credits: Zer0
+# Credits: Zer0-zn
 
 This Python script search and convert all the .paa files from the folder that is contained and subfolders (used in DayZ and other Bohemia Interactive games) to .png format and .png to .paa. It preserves the folder structure of your .paa files in the output folder.
 
@@ -114,4 +114,4 @@ Converted .png files will be saved in a folder called converted_png keeping the 
 
 Ensure ImageToPAA.exe works from the terminal. If it doesn't, check that its folder is correctly added to the PATH. Also if you want to convert only some files and not all the files in a folder/subfolder then put the scripts on the folder with the .paa you want to convert and run the script. If you want to convert huge amount of files like the whole animal folder from animals.pbo just put the script on the folder where you extracted the files from the .pbo and run the script, it will automatically scan the folder and subfolders for all the .paa files and cloning the folder structure to save time.
 
-Credits to Zer0.
+Credits to Zer0-zn.
