@@ -1,36 +1,54 @@
 # PAA-to-PNG-using-pal2pace-ImageToPAA.exe--dayztools-
-# Python script to convert multiple files from .paa to .png using ImageToPAA.exe from dayztools. To use it just download it and extract the script to the folder that contains the .paa files, (The script will search for PAA files in the folder the script is stored and all the subfolders), execute it and you will get all the PAA files converted to PNG in a folder named converted_png keeping the original folder structure from the origin files.
+PAA to PNG Converter
 
-import os
-import subprocess
-from pathlib import Path
-from tqdm import tqdm
+# Credits: Zer0
 
-# Base folder (where this script is located)
-base_folder = Path(__file__).parent
+This Python script converts .paa files (used in DayZ and other Bohemia Interactive games) to .png format. It preserves the folder structure of your .paa files in the output folder.
 
-# Output folder
-output_folder = base_folder / "converted_png"
+# Requirements
 
-# Path to the ImageToPAA.exe executable
-# NOTE: If the script is not working then add this folder to your system PATH so the terminal can recognize 'pal2pace' "C:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin\ImageToPAA"
-imageToPAA = Path(r"C:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin\ImageToPAA\ImageToPAA.exe")
+- Python
+Download and install Python from https://www.python.org/downloads/
+Make sure to check “Add Python to PATH” during installation.
 
-# Search for all .paa files in the base folder and all subfolders
-paa_files = list(base_folder.rglob("*.paa"))
+- DayZ Tools
+You need DayZ Tools to get ImageToPAA.exe for the script to work.
+Example path:
+After installing dayz tools on steam you will find ImageToPAA.exe
+C:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin\ImageToPAA\ImageToPAA.exe
 
-print(f"Found {len(paa_files)} .paa files.")
+- TQDM library (for progress bar)
+Install via terminal:
+pip install tqdm
 
-for file in tqdm(paa_files, desc="Converting files"):
-    # Create output path maintaining folder structure
-    relative_path = file.relative_to(base_folder)
-    dest_file = output_folder / relative_path.with_suffix(".png")
-    dest_file.parent.mkdir(parents=True, exist_ok=True)
+# Setup
 
-    # Command: only source and destination (do not use 'pal2pace' as argument)
-    cmd = [str(imageToPAA), str(file), str(dest_file)]
+Add the ImageToPAA.exe folder "C:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin\ImageToPAA" to your system PATH so the script can use the argument pal2pace from ImageToPAA.exe on CMD
 
-    try:
-        subprocess.run(cmd, check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Error converting {file}: {e}")
+Windows:
+
+Open Settings → System → About → Advanced system settings → Environment Variables.
+Under System variables, find Path and click Edit.
+Add the folder containing ImageToPAA.exe.
+Click OK to save changes.
+
+Usage
+After downloading the zip with the script just extract it in the folder that contains the .paa files you want to convert.
+The script will automatically search all subfolders for .paa files. 
+---The best usage for this script is extracting all the .pbo files you want to modify in one folder and mantaining the folder structure of the .pbo meaning to leave all the .paa in their original folders after extracting them from the .pbo because the script will search in all the subfolders and it will create the same folder structure of the origin with the same subfolders and the .paa files in their original folder so you can just extract convert modify and then convert 
+Open a terminal (PowerShell or CMD) in the folder where your script is located.
+
+Run the script:
+
+python your_script_name.py
+
+
+Converted .png files will be saved in a folder called converted_png with the same folder structure as your .paa files.
+
+Notes
+
+Ensure ImageToPAA.exe works from the terminal. If it doesn't, check that its folder is correctly added to the PATH.
+
+The script will show credits to Zer0 in the terminal at the start.
+
+All .paa files in the current folder and all subfolders are processed automatically.
